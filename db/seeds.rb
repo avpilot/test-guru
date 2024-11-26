@@ -9,15 +9,15 @@ categories = Category.create([{ title: 'Frontend' },
                               { title: 'Backend' },
                               { title: 'Mobile development' }])
 
-tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second },
-                     { title: 'HTML', category: categories.first },
-                     { title: 'Python', category: categories.second },
-                     { title: 'Java', level: 2, category: categories.third },
-                     { title: 'Rails', level: 3, category: categories.second }])
-
 users = User.create([{ name: 'Andy', mail: 'andy@google.com' },
                      { name: 'Mike', mail: 'mike@google.com' },
                      { name: 'Tom', mail: 'tom@google.com' }])
+
+tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second, author: users.first },
+                     { title: 'HTML', category: categories.first, author: users.first },
+                     { title: 'Python', category: categories.second, author: users.first },
+                     { title: 'Java', level: 2, category: categories.third, author: users.first },
+                     { title: 'Rails', level: 3, category: categories.second, author: users.first }])
 
 questions = Question.create([{ body: 'Who is the creator of Ruby?', test: tests.first },
                              { body: 'Who is the creator of HTML?', test: tests.second },
