@@ -9,12 +9,15 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  scope :by_category, ->(category) { joins(:category).where(category: { title: category }).order('tests.title DESC') }
-
-  validates :title, presence: true
+  scope :by_category, ->(category) { joins(:category).where(category: { title: category }) }
+  
+  validates :title, presence: true,
+                    uniqueness: { scope: :level,
+                                  message: 'the same title and level already exists' }
 
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  validates :title, uniqueness: { scope: :level,
-                                  message: 'the same title and level already exists' }
+  def self.titles_by_category(category)
+    by_category(category).order('tests.title DESC').pluck(:title)
+  end
 end

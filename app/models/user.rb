@@ -7,8 +7,7 @@ class User < ApplicationRecord
 
   validates :mail, presence: true
 
-  def test_passages(level)
-    TestPassage.where(user: self)
-               .includes(:test).where(test: { level: level }).joins(:test).pluck(:title)
+  def test_titels_by_level(level)
+    test_passages.joins(:test).where(test: { level: level }).pluck(:title)
   end
 end
