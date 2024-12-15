@@ -1,0 +1,9 @@
+<h2><%= @question.body %></h2>
+<body>
+  <i>Answers:</i>
+  <ol>
+    <% @question.answers.pluck(:body).each do |answer| %>
+        <li><%= answer %></li>
+     <% end %>
+  </ol>
+</body>

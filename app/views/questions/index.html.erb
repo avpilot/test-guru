@@ -1,0 +1,9 @@
+<h2>Test <%= @test.title %></h2>
+<body>
+  <i>Questions:</i>
+  <ol>
+    <% @test.questions.pluck(:body).each do |question| %>
+        <li><%= question %></li>
+     <% end %>
+  </ol>
+</body>
