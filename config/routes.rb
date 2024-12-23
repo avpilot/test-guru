@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   resources :tests do
-    resources :questions, shallow: true
+    resources :questions
   end
-
-  get '/tests/:test_id/questions/:id/delete', to: 'questions#delete'
 end

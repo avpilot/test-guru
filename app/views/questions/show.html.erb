@@ -1,9 +1,16 @@
-<h2><%= @question.body %></h2>
-<body>
+<p>
+  <strong>Question:</strong>
+  <%= @question.body %>
+</p>
+
+<p>
   <i>Answers:</i>
   <ol>
     <% @question.answers.pluck(:body).each do |answer| %>
         <li><%= answer %></li>
      <% end %>
   </ol>
-</body>
+</p>
+
+<%= link_to 'Edit question', edit_test_question_path(@test, @question) %> |
+<%= link_to 'Back', test_path(@test) %>
