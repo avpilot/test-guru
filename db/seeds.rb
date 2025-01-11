@@ -21,29 +21,29 @@ tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second, aut
                      { title: 'Rails', level: 3, category: categories.second, author: users.first },
                      { title: 'Assembler', level: 8, category: categories.fourth, author: users.second }])
 
-questions = Question.create([{ body: 'Who is the creator of Ruby?', test: tests.first },
-                             { body: 'Who is the creator of HTML?', test: tests.second },
-                             { body: 'Who is the creator of Python?', test: tests.third },
-                             { body: 'Who is the creator of Java?', test: tests.fourth },
-                             { body: 'Who is the creator of Rails?', test: tests.fifth }])
+questions = Question.create([{ body: 'Who is the creator of Ruby?', test_id: tests.first.id },
+                             { body: 'Who is the creator of HTML?', test_id: tests.second.id },
+                             { body: 'Who is the creator of Python?', test_id: tests.third.id },
+                             { body: 'Who is the creator of Java?', test_id: tests.fourth.id },
+                             { body: 'Who is the creator of Rails?', test_id: tests.fifth.id }])
 
-Answer.create([{ body: 'Matz', correct: true, question: questions.first },
-               { body: 'Steve Jobs', question: questions.first },
-               { body: 'Tim Berners-Lee', correct: true, question: questions.second },
-               { body: 'Bjarne Stroustrup', question: questions.second },
-               { body: 'Guido van Rossum', correct: true, question: questions.third },
-               { body: 'Sergey Brin', question: questions.third },
-               { body: 'James Gosling', correct: true, question: questions.fourth },
-               { body: 'Larry Wall', question: questions.fourth },
-               { body: 'David Heinemeier Hansson', correct: true, question: questions.fifth },
-               { body: 'Rasmus Lerdorf', question: questions.fifth }])
+Answer.create([{ body: 'Matz', correct: true, question_id: questions.first.id },
+               { body: 'Steve Jobs', question_id: questions.first.id },
+               { body: 'Tim Berners-Lee', correct: true, question_id: questions.second.id },
+               { body: 'Bjarne Stroustrup', question_id: questions.second.id },
+               { body: 'Guido van Rossum', correct: true, question_id: questions.third.id },
+               { body: 'Sergey Brin', question_id: questions.third.id },
+               { body: 'James Gosling', correct: true, question_id: questions.fourth.id },
+               { body: 'Larry Wall', question_id: questions.fourth.id },
+               { body: 'David Heinemeier Hansson', correct: true, question_id: questions.fifth.id },
+               { body: 'Rasmus Lerdorf', question_id: questions.fifth.id }])
 
-TestPassage.create([ { user: users.first, test: tests.first },
-                     { user: users.first, test: tests.second },
-                     { user: users.first, test: tests.third },
-                     { user: users.second, test: tests.first },
-                     { user: users.second, test: tests.third },
-                     { user: users.second, test: tests.fifth },
-                     { user: users.third, test: tests.first },
-                     { user: users.third, test: tests.second },
-                     { user: users.third, test: tests.fourth }])
+# TestPassage.create([ { user: users.first, test: tests.first },
+#                      { user: users.first, test: tests.second },
+#                      { user: users.first, test: tests.third },
+#                      { user: users.second, test: tests.first },
+#                      { user: users.second, test: tests.third },
+#                      { user: users.second, test: tests.fifth },
+#                      { user: users.third, test: tests.first },
+#                      { user: users.third, test: tests.second },
+#                      { user: users.third, test: tests.fourth }])

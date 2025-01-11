@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def test_titels_by_level(level)
     tests.where(level: level).pluck(:title)
   end
+
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
 end
