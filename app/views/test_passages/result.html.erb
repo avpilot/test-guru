@@ -1,1 +1,9 @@
-<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<h1>
+  <%= result_message(@test_passage)%>
+</h1>
+
+<p>
+  Result: <b style="color: <%= result_color(@test_passage) %>"> <%= @test_passage.correct_persent %>% </b>
+</p>
+
+<%= link_to 'Return to Tests', tests_path %>
