@@ -1,9 +1,3 @@
-<h1>
-  <%= result_message(@test_passage)%>
-</h1>
-
-<p>
-  Result: <b style="color: <%= result_color(@test_passage) %>"> <%= @test_passage.correct_persent %>% </b>
-</p>
+<%= @test_passage.success? ? (render 'success') : (render 'fail') %>
 
 <%= link_to 'Return to Tests', tests_path %>
