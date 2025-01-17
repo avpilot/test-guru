@@ -10,7 +10,6 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
   scope :by_category, ->(category) { joins(:category).where(category: { title: category }) }
-  
   validates :title, presence: true,
                     uniqueness: { scope: :level,
                                   message: 'the same title and level already exists' }
