@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-
   get 'sessions/new'
+  get 'sessions/delete'
   get 'users/new'
   root 'tests#index'
 
   get :signup, to: 'users#new'
   get :login, to: 'sessions#new'
-  
+  get :logout, to: 'sessions#delete'
+
   resources :users, only: :create
   resources :sessions, only: :create
 
@@ -20,11 +21,9 @@ Rails.application.routes.draw do
     end
   end
 
-  # GET /test_passages/101/result
   resources :test_passages, only: %i[show update] do
     member do
       get :result
     end
   end
-
 end
