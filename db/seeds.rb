@@ -11,7 +11,7 @@ categories = Category.create([{ title: 'Frontend' },
                               { title: 'Embedded' }])
 
 users = User.create([{ name: 'Andy', email: 'andy@google.com' },
-                     { name: 'Mike', email: 'mike@google.com' },
+                     { name: 'Mike', email: 'andy@google.com' },
                      { name: 'Tom', email: 'tom@google.com' }])
 
 tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second, author: users.first },
