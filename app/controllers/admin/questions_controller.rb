@@ -1,4 +1,5 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
+
   before_action :find_test, only: %i[new create]
   before_action :find_question, except: %i[new create]
 
@@ -14,14 +15,14 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to @question.test
+    redirect_to admin_test_url(@question.test)
   end
 
   def create
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @test
+      redirect_to admin_test_url(@test)
     else
       render :new
     end
@@ -29,7 +30,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to admin_test_url(@question.test)
     else
       render :edit
     end
@@ -47,10 +48,10 @@ class QuestionsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
-    # @test = @question.test
   end
 
   def rescue_with_question_not_found
     render inline: '<p>Question id:<%= params[:id] %> was not found</p>'
   end
+
 end
