@@ -11,10 +11,9 @@
   </head>
 
   <body>
-    <%#= render 'shared/navigation' %>
     <% if user_signed_in? %>
       <p class="nav user">
-        Welcome, <b><%= current_user.email %></b> Guru |
+        <%= t('welcome') %>, <b><%= current_user.email %></b> Guru |
         <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
       </p>
     <% end %>
@@ -25,9 +24,7 @@
     <footer>
       <div>
         <p>
-          <%= current_year %>, Андрей Пронин, <%= github_url('avpilot', 'test-guru') %><br>
-          Приложение TestGuru предназначено для создания, управления и выполнения различных тестов.<br>
-          <a href="https://thinknetica.com" target="_blank">Учебный проект в онлайн-школе Thinknetica</a>
+          <%= t('footer_html', year: current_year, github_url: github_url('avpilot', 'test-guru')) %>
         </p>
       </div>
     </footer>
