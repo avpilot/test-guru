@@ -1,0 +1,69 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите:"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      question_count: "Количество вопросов"
+    levels:
+      easy: "Лёгкий"
+      elementary: "Начальный"
+      advanced: "Продвинутый"
+      hard: "Сложный"
+      hero: "Героический"
+    test:
+      start: "Начать Тест"
+
+  test_passages:
+    success:
+      header: "Тест %{title} успешно завершён!"
+    fail:
+      header: "Тест %{title} не пройден..."
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан."
+      index:
+        actions: "Действия"
+      new:
+        header: "Создать новый Тест"
+      edit:
+        header: "Изменить %{title} Тест"
+      test:
+        confirmation: "Вы уверены?"
+    nav:
+      admin_panel: "Панель Управления"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы завершили тест на TestGuru!"
+
+  welcome: "Добро пожаловать"
+  new: "Новый %{item}"
+  show: "Показать"
+  edit: "Изменить"
+  delete: "Удалить"
+  back: "Назад"
+  footer_html: "%{year}, Андрей Пронин, %{github_url}<br>
+                Приложение TestGuru предназначено для создания, управления и выполнения различных тестов.<br>
+                <a href='https://thinknetica.com' target='_blank'>Учебный проект в онлайн-школе Thinknetica</a>"
