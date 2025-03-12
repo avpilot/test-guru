@@ -19,6 +19,7 @@ module TestGuru
     config.time_zone = "Samara"
     config.i18n.default_locale = :ru
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
+    config.autoload_paths << "#{Rails.root}/lib/clients"
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end

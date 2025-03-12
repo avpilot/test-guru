@@ -3,6 +3,7 @@ en:
     models:
       test: "Test"
       question: "Question"
+      user: "User"
 
     attributes:
       test:

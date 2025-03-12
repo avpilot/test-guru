@@ -1,7 +1,8 @@
 <nav class="navbar navbar-light bg-light">
   <span class="navbar-brand">
     <%= link_to 'TestGuru', root_path %>
-    <%= t('.admin_panel') %>
+    <%= link_to t('.admin_panel'), admin_tests_path %>
+    <%= link_to 'Gists', admin_gists_path %>
   </span>
 
   <div class="nav-admin user">
