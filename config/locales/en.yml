@@ -36,9 +36,10 @@ en:
       header: "The %{title} Test was Competed!"
     fail:
       header: "The %{title} Test was Failed..."
-    gist:
-      success: "Gist was succesfully created!"
-      failure: "An error occured while saving gist"
+
+  gists:
+    success: "Gist was succesfully created!"
+    failure: "An error occured while saving gist"
 
   admin:
     tests:

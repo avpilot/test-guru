@@ -1,4 +1,7 @@
 class GistQuestionService
+
+  HTTP_GIST_CREATED_STATUS = 201
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
@@ -7,6 +10,10 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    @client.last_response.status == HTTP_GIST_CREATED_STATUS
   end
 
   private
@@ -27,4 +34,5 @@ class GistQuestionService
     content += @question.answers.pluck(:body)
     content.join("\n")
   end
+
 end

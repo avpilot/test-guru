@@ -38,9 +38,10 @@ ru:
       header: "Тест %{title} успешно завершён!"
     fail:
       header: "Тест %{title} не пройден..."
-    gist:
-      success: "Gist успешно сохранен!"
-      failure: "Во время сохранения gist произошла ошибка"
+
+  gists:
+    success: "Gist успешно сохранен!"
+    failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:

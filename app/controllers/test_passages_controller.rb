@@ -1,8 +1,7 @@
 class TestPassagesController < ApplicationController
-  rescue_from Octokit::Error, with: :git_error
 
   before_action :authenticate_user!
-  before_action :set_test_passage, only: %i[show update result gist]
+  before_action :set_test_passage, only: %i[show update result]
 
   def show; end
 
@@ -19,24 +18,10 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def gist
-    result = GistQuestionService.new(
-      @test_passage.current_question,
-      client: Octokit::Client.new(access_token: ENV['GIST_TOKEN'])
-    ).call
-
-    current_user.gists.create(question: @test_passage.current_question, url: result['html_url'])
-    flash[:notice] = "#{t('.success')} <a href=\"#{result['html_url']}\" target='blank'>gist_link</a>"
-    redirect_to @test_passage
-  end
-
   private
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
 
-  def git_error
-    redirect_to @test_passage, alert: t('.failure')
-  end
 end
