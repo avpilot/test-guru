@@ -7,8 +7,8 @@ class GistsController < ApplicationController
     service = gist_service
     @gist = current_user.gists.new(question: @test_passage.current_question, url: service.call['html_url'])
 
-    if @gist.save && service.success?
-      redirect_to @test_passage, notice: success_message
+    if service.success?
+      redirect_to @test_passage, notice: success_message if @gist.save
     else
       redirect_to @test_passage, alert: t('.failure')
     end
