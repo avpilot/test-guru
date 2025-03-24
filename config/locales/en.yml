@@ -37,6 +37,10 @@ en:
     fail:
       header: "The %{title} Test was Failed..."
 
+  gists:
+    success: "Gist was succesfully created!"
+    failure: "An error occured while saving gist"
+
   admin:
     tests:
       create:
@@ -51,6 +55,11 @@ en:
         confirmation: "Are you shure?"
     nav:
       admin_panel: "Admin Panel"
+
+    gists:
+      index:
+        header: "Gists from users"
+      gist_description: "A question about %{title} from TestGuru"
 
   tests_mailer:
     completed_test:

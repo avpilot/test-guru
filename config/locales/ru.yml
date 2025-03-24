@@ -39,6 +39,10 @@ ru:
     fail:
       header: "Тест %{title} не пройден..."
 
+  gists:
+    success: "Gist успешно сохранен!"
+    failure: "Во время сохранения gist произошла ошибка"
+
   admin:
     tests:
       create:
@@ -54,6 +58,11 @@ ru:
     nav:
       admin_panel: "Панель Управления"
 
+    gists:
+      index:
+        header: "Gists от пользователей"
+      gist_description: "Вопрос о %{title} от TestGuru"
+  
   tests_mailer:
     completed_test:
       subject: "Вы завершили тест на TestGuru!"

@@ -25,6 +25,15 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# GitHub Octokit
+gem 'octokit'
+
+# ENV
+gem 'dotenv', groups: [:development, :test]
+
+# HTTP
+gem 'faraday'
+
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 5.3.3'
