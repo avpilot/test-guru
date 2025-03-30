@@ -3,7 +3,11 @@
     <h1><%= t('.header') %></h1>
     <table class="table table-borderless">
       <tr>
-        <th scope="col"><%= Test.human_attribute_name(:title) %></th>
+        <th class="sort-by-title pointer" scope="col">
+          <%= Test.human_attribute_name(:title) %>
+          <%= octicon 'arrow-up', class: 'text-success' %>
+          <%= octicon 'arrow-down', class: 'text-success' %>  
+        </th>
         <th scope="col"><%= Test.human_attribute_name(:level) %></th>
         <th scope="col" colspan="2"><%= t('.question_count') %></th>
       </tr>
