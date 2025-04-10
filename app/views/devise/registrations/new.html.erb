@@ -22,8 +22,10 @@
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "password"%>
   </div>
 
-  <div class="field">
+  <div class="confirm-password field">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "confirm password" %>
+    <%= octicon 'shield-check', class: 'text-success hide' %>
+    <%= octicon 'shield-x', class: 'text-danger hide' %>
   </div>
 
   <div class="actions">

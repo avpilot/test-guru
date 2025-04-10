@@ -7,10 +7,13 @@
 //= require popper
 //= require bootstrap-sprockets
 
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "utilities/checking_password"
+import "utilities/sorting"
 
 Rails.start()
 Turbolinks.start()
