@@ -11,7 +11,10 @@ function checkPassword() {
   if (!password_confirmation) {
     this.querySelector('.octicon-shield-check').classList.add('hide');
     this.querySelector('.octicon-shield-x').classList.add('hide');
-  } else if (password_confirmation === password) {
+    return
+  }
+
+  if (password_confirmation === password) {
     this.querySelector('.octicon-shield-check').classList.remove('hide');
     this.querySelector('.octicon-shield-x').classList.add('hide');
   } else {
