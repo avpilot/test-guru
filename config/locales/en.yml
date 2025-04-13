@@ -53,6 +53,8 @@ en:
         header: "Edit %{title} Test"
       test:
         confirmation: "Are you shure?"
+      form_inline:
+        submit: "ОК"
     nav:
       admin_panel: "Admin Panel"
 

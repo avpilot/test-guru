@@ -1,0 +1,6 @@
+<%= content_tag :div, class: 'progress',
+                      data: { current_question_number: test_passage.current_question_number, 
+                              questions_count: test_passage.test.questions.count } do %>
+  <%= content_tag :div, id: 'progress-bar' do %>
+  <% end %>
+<% end %>

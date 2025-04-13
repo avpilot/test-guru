@@ -5,3 +5,16 @@
 .hide {
   display: none;
 }
+
+.progress {
+  width: 100%;
+  background-color: lightgray;
+  height: 20px;
+  border-radius: 5px;
+}
+
+#progress-bar {
+  width: 1%;
+  background-color: green;
+  border-radius: 5px;
+}
