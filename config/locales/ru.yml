@@ -55,6 +55,8 @@ ru:
         header: "Изменить %{title} Тест"
       test:
         confirmation: "Вы уверены?"
+      form_inline:
+        submit: "ОК"
     nav:
       admin_panel: "Панель Управления"
 

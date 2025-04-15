@@ -2,6 +2,7 @@
 
 <h2>
   Question [<%= passage_progress(@test_passage) %>]:
+  <%= render 'shared/progress_bar', test_passage: @test_passage %>
 </h2>
 
 <h2>
@@ -17,5 +18,5 @@
   <% end %>
 
   <p><%= link_to 'Gist Question', test_passage_gists_path(@test_passage), method: :post %></p>
-  <p><%= form.submit %></p>
+  <p><%= form.submit class: 'progress-bar-submit', data: { test_passage_id: @test_passage.id }%></p>
 <% end %>

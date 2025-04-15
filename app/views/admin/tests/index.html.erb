@@ -6,6 +6,8 @@
       <%= link_to t(:new, item: Test.model_name.human), new_admin_test_path %>
     </p>
 
+    <%= render 'shared/errors', resource: @test %>
+
     <table class="table table-borderless">
       <tr>
         <th class="sort-by-title pointer" scope="col">
