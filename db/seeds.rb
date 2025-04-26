@@ -10,16 +10,39 @@ categories = Category.create([{ title: 'Frontend' },
                               { title: 'Mobile development' },
                               { title: 'Embedded' }])
 
-users = User.create([{ name: 'Andy', email: 'andy@google.com' },
-                     { name: 'Mike', email: 'andy@google.com' },
-                     { name: 'Tom', email: 'tom@google.com' }])
+admin = User.create!(
+  email: 'admin@example.com',
+  password: 'somepass',
+  password_confirmation: 'somepass',
+  first_name: 'Andy',
+  last_name: 'Pronin',
+  type: 'Admin',
+  confirmed_at: Time.current
+)
 
-tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second, author: users.first },
-                     { title: 'HTML', category: categories.first, author: users.first },
-                     { title: 'Python', category: categories.second, author: users.first },
-                     { title: 'Java', level: 2, category: categories.third, author: users.first },
-                     { title: 'Rails', level: 3, category: categories.second, author: users.first },
-                     { title: 'Assembler', level: 8, category: categories.fourth, author: users.second }])
+users_data = [
+  { email: 'user1@example.com', first_name: 'Иван', last_name: 'Петров' },
+  { email: 'user2@example.com', first_name: 'Мария', last_name: 'Сидорова' },
+  { email: 'user3@example.com', first_name: 'Алексей', last_name: 'Иванов' }
+]
+
+users_data.each do |user_data|
+  user = User.create!(
+    email: user_data[:email],
+    password: 'password123',
+    password_confirmation: 'password123',
+    first_name: user_data[:first_name],
+    last_name: user_data[:last_name],
+    confirmed_at: Time.current
+  )
+end
+
+tests = Test.create([{ title: 'Ruby', level: 1, category: categories.second, author: admin },
+                     { title: 'HTML', category: categories.first, author: admin },
+                     { title: 'Python', category: categories.second, author: admin },
+                     { title: 'Java', level: 2, category: categories.third, author: admin },
+                     { title: 'Rails', level: 3, category: categories.second, author: admin },
+                     { title: 'Assembler', level: 8, category: categories.fourth, author: admin }])
 
 questions = Question.create([{ body: 'Who is the creator of Ruby?', test_id: tests.first.id },
                              { body: 'Who is the creator of HTML?', test_id: tests.second.id },
@@ -37,13 +60,3 @@ Answer.create([{ body: 'Matz', correct: true, question_id: questions.first.id },
                { body: 'Larry Wall', question_id: questions.fourth.id },
                { body: 'David Heinemeier Hansson', correct: true, question_id: questions.fifth.id },
                { body: 'Rasmus Lerdorf', question_id: questions.fifth.id }])
-
-# TestPassage.create([ { user: users.first, test: tests.first },
-#                      { user: users.first, test: tests.second },
-#                      { user: users.first, test: tests.third },
-#                      { user: users.second, test: tests.first },
-#                      { user: users.second, test: tests.third },
-#                      { user: users.second, test: tests.fifth },
-#                      { user: users.third, test: tests.first },
-#                      { user: users.third, test: tests.second },
-#                      { user: users.third, test: tests.fourth }])
