@@ -51,8 +51,6 @@ default: &default
 development:
   <<: *default
   compile: false
-  extract_css: true
-  cache_manifest: true
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
@@ -87,7 +85,6 @@ production:
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
-  extract_css: true
   public_output_path: packs
 
   # Extract and emit a css file
