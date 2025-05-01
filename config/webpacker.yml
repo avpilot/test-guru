@@ -7,6 +7,7 @@ default: &default
   public_output_path: packs
   cache_path: tmp/cache/webpacker
   webpack_compile_output: true
+  extract_css: true
 
   # Additional paths webpack should lookup modules
   # ['app/assets', 'engine/foo/app/assets']
@@ -50,6 +51,7 @@ default: &default
 development:
   <<: *default
   compile: true
+  extract_css: true
 
   # Reference: https://webpack.js.org/configuration/dev-server/
   dev_server:
@@ -84,9 +86,6 @@ production:
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: true
-  source_path: app/javascript
-  source_entry_path: packs
-  public_root_path: public
   public_output_path: packs
 
   # Extract and emit a css file
