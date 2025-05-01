@@ -84,9 +84,6 @@ production:
 
   # Production depends on precompilation of packs prior to booting for performance.
   compile: true
-  source_path: app/javascript
-  source_entry_path: packs
-  public_root_path: public
   public_output_path: packs
 
   # Extract and emit a css file
